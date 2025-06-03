@@ -3,7 +3,7 @@ import express from 'express';
 import db from '../database.js';
 import { addAdmin } from '../models/Admin.js'; // Importer les fonctions du modèle Admin
 import jwt from 'jsonwebtoken';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcrypts';
 import verifyAdmin from '../middlewares/authMiddleware.js'
 const router = express.Router();
 

@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcrypts';
 import db from '../database.js'; // Importez votre connexion à la base de données
 
 export const isAdmin = async (email, password) => {
