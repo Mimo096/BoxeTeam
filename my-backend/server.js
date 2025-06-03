@@ -12,7 +12,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 // Middleware
 app.use(cors({
@@ -42,6 +42,16 @@ if (!process.env.JWT_SECRET) {
     console.error("La variable JWT_SECRET n'est pas définie dans le fichier .env");
     process.exit(1); // Arrêtez le serveur si la clé est manquante
 }
+
+
+// Servir les fichiers statiques du frontend React
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+// Route fallback pour React (pour toutes les routes non API)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
+
 
 // Démarrer le serveur
 app.listen(port, () => {

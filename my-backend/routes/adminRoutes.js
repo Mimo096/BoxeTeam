@@ -1,7 +1,7 @@
 console.log("Chargement de adminRoutes.js");
 import express from 'express';
 import db from '../database.js';
-import { addAdmin } from '../models/admin.js'; // Importer les fonctions du modèle Admin
+import { addAdmin } from '../models/Admin.js'; // Importer les fonctions du modèle Admin
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import verifyAdmin from '../middlewares/authMiddleware.js'
