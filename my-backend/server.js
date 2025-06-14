@@ -30,7 +30,15 @@ app.use((req, res, next) => {
 
 // Routes principales
 app.get('/api', (req, res) => {
-   
+   res.json({ 
+        message: 'API backend en ligne',
+        test: '/api/admin/test',
+        adminRoutesLoaded: typeof adminRoutes === 'function'
+    });
+});
+
+app.get('/api/test-direct', (req, res) => {
+    res.json({ message: 'Test direct depuis server.js OK' });
 });
 
 app.use('/api/admin', adminRoutes); // Routes pour les administrateurs
