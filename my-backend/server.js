@@ -14,7 +14,7 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const port = process.env.PORT || 4000;
 
-// Servir les fichiers statiques dans le dossier public
+// Servir les fichiers statiques dans le dossier public //
 app.use('/public' , express.static(path.join(__dirname,'src','public')));
 
 

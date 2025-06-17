@@ -9,7 +9,7 @@ const router = express.Router();
 import path from 'path';
 
 
-
+// cree une route AdminLogin //
 router.get('/very-secure-path/login-admin-2025', (req, res) => {
    res.sendFile(path.join(__dirname, 'src', 'public', 'AdminLogin.js'));
   res.sendFile(filePath);
