@@ -6,6 +6,17 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import verifyAdmin from '../middlewares/authMiddleware.js'
 const router = express.Router();
+import path from 'path';
+
+
+
+router.get('/very-secure-path/login-admin-2025', (req, res) => {
+   res.sendFile(path.join(__dirname, 'src', 'public', 'AdminLogin.js'));
+  res.sendFile(filePath);
+});
+
+
+
 
 // 1. Récupérer tous les administrateurs
 router.get('/', async (req, res) => {
@@ -17,6 +28,9 @@ router.get('/', async (req, res) => {
         res.status(500).json({ error: 'Erreur serveur' });
     }
 });
+
+
+
 
 
 
